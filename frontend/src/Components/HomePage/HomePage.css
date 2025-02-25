@@ -1,0 +1,187 @@
+/* General styles */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe4e1;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffb6c1;
+    padding: 15px 30px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .app-name {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Ensures proper alignment */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar ul li {
+    margin: 0 15px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Logout Button */
+  .logout-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-button {
+    background-color: white;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-left: 15px; /* Adds spacing between login and logout */
+  }
+  
+  .logout-button:hover {
+    background-color: #ff69b4;
+    color: white;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ffb6c1, #add8e6);
+    color: white;
+  }
+  
+  .hero h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  /* About Section */
+  .about {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .about h2 {
+    color: #ff69b4;
+    font-size: 26px;
+  }
+  
+  .about p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Contact Form */
+  .contact {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .contact h2 {
+    color: #ff69b4;
+  }
+  
+  .contact p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .contact input, .contact textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .contact button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .contact button:hover {
+    background-color: #ff1493;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ff1493;
+  }
+  
