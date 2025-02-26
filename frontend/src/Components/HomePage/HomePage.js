@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import "./HomePage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const HomePage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % 3);
+    }, 10000); // Change slide every 10 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div>
       {/* Navbar */}
@@ -20,10 +30,37 @@ const HomePage = () => {
         </ul>
       </nav>
 
+       {/* Image Slider Section */}
+       <section className="image-slider">
+        <div className={`slide ${currentSlide === 0 ? "active" : ""}`}>
+          <img src="/img1.jpg" alt="Change the Psychle" />
+          <div className="text-overlay pink">
+            <h2>Change the <span className="highlight">Psychle</span></h2>
+            <p>A social endeavour that shatters societal structures to uplift women.</p>
+          </div>
+        </div>
+        <div className={`slide ${currentSlide === 1 ? "active" : ""}`}>
+          <img src="/img2.webp" alt="Shattering Myths" />
+          <div className="text-overlay purple">
+            <h2>Shattering <span className="highlight">Myths</span></h2>
+            <p>Redefining menstrual hygiene through awareness and education.</p>
+          </div>
+        </div>
+        <div className={`slide ${currentSlide === 2 ? "active" : ""}`}>
+          <img src="/img3.jpg" alt="Enlightening Young Minds" />
+          <div className="text-overlay grey">
+            <h2><span className="highlight">Enlightening</span> Young Minds</h2>
+            <p>Enabling awareness, embracing change, and encouraging sustainability.</p>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Vision & Mission Section */}
       <section className="vision-mission">
         <div className="vision">
-          <img src="/vision.jpg" alt="Vision" className="vision-mission-img" />
+          <img src="/vision.jpeg" alt="Vision" className="vision-mission-img" />
           <h2>Our Vision</h2>
           <p>To be the leading digital destination for women’s wellness, offering innovative, eco-friendly, and personalized solutions for menstrual health. SheSync envisions a world where every woman has access to reliable products, expert guidance, and a safe space to embrace her natural cycles with confidence and care.</p>
         </div>
