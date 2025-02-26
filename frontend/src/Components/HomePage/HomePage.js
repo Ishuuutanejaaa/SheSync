@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom"; 
-import "./HomePage.css";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import "./HomePage.css";
 
 const HomePage = () => {
   return (
@@ -9,44 +8,42 @@ const HomePage = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo-container">
-          <img src="/Logo.png" alt="SHESYNC Logo" className="logo" />
-          <h2 className="app-name">SHESYNC</h2>
+          <img src="/Logo.png" alt="SheSync Logo" className="logo" />
+          <span className="app-name">SheSync</span>
         </div>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/aboutus">About Us</Link></li>
-          <li><Link to="/shopping">Shopping</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li className="logout-item">
-            <button className="logout-button">Logout</button>
-          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shopping</a></li>
+          <li><a href="#">Login</a></li>
+          <li><button className="logout-button">Logout</button></li>
         </ul>
       </nav>
 
-      {/* Hero Section */}
-      <header className="hero">
-        <h1>Empowering Women’s Health & Wellness</h1>
-        <p>Track your cycle, shop for essentials, and stay informed with SHESYNC.</p>
-      </header>
-
-      {/* About Section */}
-      <section className="about">
-        <h2>Why SHESYNC?</h2>
-        <p>
-          SHESYNC is a dedicated platform to help women track their menstrual health, 
-          shop for wellness products, and access expert advice. Stay in sync with your body!
-        </p>
+      {/* Vision & Mission Section */}
+      <section className="vision-mission">
+        <div className="vision">
+          <img src="/vision.jpg" alt="Vision" className="vision-mission-img" />
+          <h2>Our Vision</h2>
+          <p>To be the leading digital destination for women’s wellness, offering innovative, eco-friendly, and personalized solutions for menstrual health. SheSync envisions a world where every woman has access to reliable products, expert guidance, and a safe space to embrace her natural cycles with confidence and care.</p>
+        </div>
+        <div className="divider"></div>
+        <div className="mission">
+          <img src="/mission.jpg" alt="Mission" className="vision-mission-img" />
+          <h2>Our Mission</h2>
+          <p>SheSync is dedicated to empowering women by providing a seamless e-commerce platform for menstrual and reproductive health. We offer high-quality, sustainable, and science-backed products for period care, PCOS/PCOD management, and overall hormonal balance. Our mission is to promote self-care, break taboos, and create a supportive community for women’s health.  
+          </p>
+        </div>
       </section>
 
       {/* Contact Us Form */}
       <section className="contact">
         <h2>Contact Us</h2>
-        <p>Have questions or feedback? We’d love to hear from you!</p>
         <form>
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
           <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit">Send</button>
         </form>
       </section>
 
