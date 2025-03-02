@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import "./HomePage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,7 +26,7 @@ const HomePage = () => {
           <li><a href="#">Home</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Shopping</a></li>
-          <li><a href="#">Login</a></li>
+          <li><Link to="/login">Login</Link></li>
           <li><button className="logout-button">Logout</button></li>
         </ul>
       </nav>
