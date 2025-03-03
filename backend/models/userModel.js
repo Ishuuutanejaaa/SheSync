@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../config/db');
 
 const createUser = (name, email, hashedPassword, callback) => {
     const query = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
