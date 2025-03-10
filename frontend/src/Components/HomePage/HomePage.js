@@ -25,7 +25,8 @@ const HomePage = () => {
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#">Shopping</a></li>
+          <li><Link to="/products">Shopping</Link></li>
+          <li><Link to="/cart">View cart</Link></li>
           <li><Link to="/login">Login</Link></li>
           <li><button className="logout-button">Logout</button></li>
         </ul>
