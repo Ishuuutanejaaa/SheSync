@@ -1,4 +1,4 @@
-.product-container {
+/* .product-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -19,4 +19,131 @@
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
+  } */
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 20px;
   }
+  
+  .product-card {
+    width: 260px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  
+  .product-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 5px 0;
+  }
+  
+  .product-card strong {
+    color: #111;
+  }
+  
+  .product-card button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin: 6px 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .product-card button:hover {
+    background-color: #0077a5;
+  }
+  
+  .product-card div {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .product-card button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 8px 0;
+  }
+  
+  .thumbnail {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+  }
+  
+  .thumbnail:hover,
+  .thumbnail.active {
+    opacity: 1;
+    border: 2px solid #007bff;
+  }
+
+/*cart*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.cart-button {
+  background-color: #008cba;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  background-color: #005f73;
+}
+
+

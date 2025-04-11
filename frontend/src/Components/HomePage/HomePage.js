@@ -273,7 +273,7 @@ const HomePage = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/products">Shopping</Link></li>
-          <li><Link to="/cart">View Cart</Link></li>
+          {/* <li><Link to="/cart">View Cart</Link></li> */}
           <li><Link to="/login">Login</Link></li>
           <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
         </ul>
