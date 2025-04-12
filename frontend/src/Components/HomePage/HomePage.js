@@ -345,6 +345,35 @@ const HomePage = () => {
         </div>
       </section>
 
+
+      <section className="tracker-section">
+        <h2 className="tracker-heading">Let’s Track Our Period</h2>
+        <p className="tracker-intro">
+          Knowing your cycle helps you plan better, stay healthier, and understand your body’s natural rhythm.
+        </p>
+        <div className="tracker-benefits">
+          <div className="benefit-card">
+            <i className="fas fa-heartbeat benefit-icon"></i>
+            <h4>Better Health Monitoring</h4>
+            <p>Track symptoms and get insights into hormonal balance and fertility.</p>
+          </div>
+          <div className="benefit-card">
+            <i className="fas fa-calendar-check benefit-icon"></i>
+            <h4>Plan Your Schedule</h4>
+            <p>Never be surprised by your periods again. Track and prepare ahead.</p>
+          </div>
+          <div className="benefit-card">
+            <i className="fas fa-brain benefit-icon"></i>
+            <h4>Understand Mood Swings</h4>
+            <p>Correlate your mood and energy changes with your cycle phases.</p>
+          </div>
+        </div>
+        <button className="tracker-button" onClick={() => navigate("/tracker")}>
+          Go to Tracker
+        </button>
+      </section>
+
+
    
       <section className="contact">
         <h2>Contact Us</h2>

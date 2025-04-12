@@ -222,6 +222,86 @@ body {
   }
 }
 
+/* Tracker Section */
+.tracker-section {
+  background: linear-gradient(to right, #ffe4e1, #fff0f5);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px dashed #ff69b4;
+  border-bottom: 2px dashed #ff69b4;
+  animation: fadeInTracker 1.5s ease-in-out;
+}
+
+@keyframes fadeInTracker {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tracker-heading {
+  color: #ff1493;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-family: "Georgia", serif;
+}
+
+.tracker-intro {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.tracker-benefits {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.benefit-card {
+  background: white;
+  border: 2px solid #ff69b4;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+
+.tracker-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.tracker-button:hover {
+  background-color: #ff1493;
+  transform: scale(1.1);
+}
+
+
 /* Contact Form */
 .contact {
   text-align: center;

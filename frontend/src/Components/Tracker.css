@@ -1,0 +1,85 @@
+/* Tracker.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe6ec, #ffb6c1);
+    min-height: 100vh;
+  }
+  
+  .tracker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .tracker-box {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .tracker-box h2 {
+    margin-bottom: 20px;
+    color: #d63384;
+    font-size: 24px;
+  }
+  
+  .tracker-input {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ffc0cb;
+    outline: none;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  .tracker-input:focus {
+    border-color: #ff69b4;
+  }
+  
+  .date-group {
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .date-group label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #b0006d;
+  }
+  
+  .tracker-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tracker-button:hover {
+    background-color: #e0559e;
+  }
+  
+  .result-box {
+    background-color: #ffe6f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #99004d;
+  }
+  
