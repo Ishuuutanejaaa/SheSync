@@ -99,7 +99,8 @@ body {
 
 .slide img {
   width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
+  height: 700px; /* Maintain aspect ratio */
+
   display: block;
 }
 

@@ -283,37 +283,37 @@ const HomePage = () => {
       <section className="image-slider">
         {[
           {
-            img: "/img1.jpg",
-            alt: "Change the Psychle",
+            img: "/Slide1.gif",
+           /* alt: "Change the Psychle",
             text: (
               <>
                 Change the <span className="highlight">Psychle</span>
               </>
             ),
             desc: "A social endeavour that shatters societal structures to uplift women.",
-            color: "pink"
+            color: "pink"*/
           },
           {
-            img: "/img2.webp",
-            alt: "Shattering Myths",
+            img: "/giphy5.gif",
+           /* alt: "Shattering Myths",
             text: (
               <>
                 Shattering <span className="highlight">Myths</span>
               </>
             ),
             desc: "Redefining menstrual hygiene through awareness and education.",
-            color: "purple"
+            color: "purple"*/
           },
           {
-            img: "/img3.jpg",
-            alt: "Enlightening Young Minds",
+            img: "/emp.webp",
+           /* alt: "Enlightening Young Minds",
             text: (
               <>
                 <span className="highlight">Enlightening</span> Young Minds
               </>
             ),
             desc: "Enabling awareness, embracing change, and encouraging sustainability.",
-            color: "grey"
+            color: "grey"*/
           }
         ].map((slide, index) => (
           <div key={index} className={`slide ${currentSlide === index ? "active" : ""}`}>
