@@ -1,0 +1,81 @@
+.about-us-container {
+  padding: 2rem;
+  background: #fff0f6;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-heading {
+  font-size: 2rem;
+  color: #d63384;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.intro-box,
+.mission-box,
+.team-box {
+  background: #ffffff;
+  border: 2px solid #ffd6e7;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 16px rgba(214, 51, 132, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.intro-box:hover,
+.mission-box:hover,
+.team-box:hover {
+  transform: translateY(-5px);
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team-card {
+  background: #ffe9f3;
+  border: 1px solid #ffa6c9;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.2);
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+}
+
+.team-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.team-card h3 {
+  margin: 0.5rem 0;
+  color: #c2185b;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: #5c5c5c;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
