@@ -66,7 +66,8 @@ const formatProduct = (product) => {
 };
 
 exports.getAllProducts = (req, res) => {
-  productModel.getAllProducts((err, results) => {
+  const sort = req.query.sort;
+  productModel.getAllProducts(sort, (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
 
     const formatted = results.map(formatProduct);

@@ -1,7 +1,27 @@
 const db = require('../config/db');
 
-const getAllProducts = (callback) => {
-  const query = 'SELECT * FROM products';
+const getAllProducts = (sort, callback) => {
+  let query = 'SELECT * FROM products';
+
+  if (sort) {
+    switch (sort) {
+      case 'price_asc':
+        query += ' ORDER BY price ASC';
+        break;
+      case 'price_desc':
+        query += ' ORDER BY price DESC';
+        break;
+      case 'name_asc':
+        query += ' ORDER BY name ASC';
+        break;
+      case 'name_desc':
+        query += ' ORDER BY name DESC';
+        break;
+      default:
+        break;
+    }
+  }
+
   db.query(query, (err, results) => {
     if (err) return callback(err);
     callback(null, results);
