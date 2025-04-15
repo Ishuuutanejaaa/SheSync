@@ -12,10 +12,15 @@ const CartPage = () => {
   const removeFromCart = (productId) => {
     const updatedCart = cart.filter((product) => product.id !== productId);
     setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart.reduce((acc, item) => {
-      acc[item.id] = item;
-      return acc;
-    }, {})));
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(
+        updatedCart.reduce((acc, item) => {
+          acc[item.id] = item;
+          return acc;
+        }, {})
+      )
+    );
   };
 
   return (
@@ -23,12 +28,19 @@ const CartPage = () => {
       <h2>Shopping Cart</h2>
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
-        
       ) : (
         <div>
           {cart.map((product) => (
             <div key={product.id} className="cart-item">
-              <img src={product.image} alt={product.name} style={{ width: "100px", height: "100px" }} />
+              <img
+                src={
+                  product.images && product.images.length > 0
+                    ? product.images[0]
+                    : product.image || ""
+                }
+                alt={product.name}
+                style={{ width: "100px", height: "100px" }}
+              />
               <h3>{product.name}</h3>
               <p>Price: ${product.price}</p>
               <p>Quantity: {product.quantity}</p>
