@@ -27,7 +27,7 @@ const ProductList = () => {
       })
       .catch((error) => console.error("Error fetching products:", error));
   };
-
+//load cart
   useEffect(() => {
     fetchProducts(sortOption);
 
@@ -35,6 +35,7 @@ const ProductList = () => {
     setCart(savedCart);
   }, [sortOption]);
 
+  //for image rot
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndexes((prevIndexes) => {
@@ -101,7 +102,7 @@ const ProductList = () => {
 
   const getTotalCartCount = () =>
     Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
-
+//jsx rendering
   return (
     <div>
       <div className="header">
