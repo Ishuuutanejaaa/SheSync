@@ -15,8 +15,8 @@ function Tracker() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:5000/tracker/save', { email, dates });
-      const response = await axios.post('http://localhost:5000/tracker/predict', { dates });
+      await axios.post('http://localhost:5001/tracker/save', { email, dates });
+      const response = await axios.post('http://localhost:5001/tracker/predict', { dates });
       setPredictedDate(response.data.predicted_date);
     } catch (error) {
       console.error('Error:', error);
