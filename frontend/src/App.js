@@ -7,19 +7,60 @@ import ProductList from './Components/ProductList';
 import CartPage from './Components/CartPage';
 import Tracker from './Components/Tracker';
 import AboutUs from './Components/AboutUs';
+import PrivateRoute from './Components/PrivateRoute';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/tracker" element={<Tracker />} />
-        <Route path="/about" element={<AboutUs />} />
-
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <HomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <PrivateRoute>
+              <ProductList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <CartPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tracker"
+          element={
+            <PrivateRoute>
+              <Tracker />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PrivateRoute>
+              <AboutUs />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );

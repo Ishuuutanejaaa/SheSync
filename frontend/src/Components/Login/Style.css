@@ -1,281 +1,24 @@
-/*
-.auth-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background: #ffebf0;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.auth-container h2 {
-    margin-bottom: 20px;
-    color: #ff66a3;
-}
-
-.auth-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ff66a3;
-    border-radius: 5px;
-}
-
-.auth-container button {
-    width: 100%;
-    padding: 10px;
-    background: #ff66a3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.auth-container p {
-    margin-top: 10px;
-}
-
-.auth-container span {
-    color: #ff66a3;
-    cursor: pointer;
-    font-weight: bold;
-}
-*/
-
-/* General container styling */
-
-
-
-
-/*
-.auth-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 30px;
-    background: linear-gradient(135deg, #ff66a3, #ff99cc);
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(50px);
-    animation: fadeInUp 0.8s ease-in-out forwards;
-}
-
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.auth-container h2 {
-    margin-bottom: 20px;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-
-.auth-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 15px 0;
-    border: 1px solid #ff66a3;
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 14px;
-    color: #333;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.auth-container input:focus {
-    border-color: #ff66a3;
-    box-shadow: 0 0 10px rgba(255, 102, 163, 0.4);
-    outline: none;
-}
-
-
-.auth-container button {
-    width: 100%;
-    padding: 12px;
-    background: #ff66a3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.auth-container button:hover {
-    background: #ff3385;
-}
-
-
-.auth-container p {
-    margin-top: 15px;
-    color: #fff;
-    font-size: 14px;
-}
-
-.auth-container span {
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.auth-container span:hover {
-    color: #ff66a3;
-}
-
-
-@media (max-width: 500px) {
-    .auth-container {
-        padding: 20px;
-        transform: translateY(20px);
-    }
-    
-    .auth-container h2 {
-        font-size: 20px;
-    }
-}
-*/
-/* Apply a background image to the entire page */
-/* Global styles for the background image */
-/*
-body {
-    background-image: url('https://wallpapers.com/images/hd/women-background-n9t5k0r03kw0qze3.jpg'); 
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh; 
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.auth-container {
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.7); 
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    position: relative;
-}
-
-
-.auth-container h2 {
-    margin-bottom: 20px;
-    color: #ff66a3; 
-}
-
-
-.auth-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: 1px solid #ff66a3; 
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 16px;
-}
-
-
-.auth-container button {
-    width: 100%;
-    padding: 12px;
-    background: #ff66a3; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-
-.auth-container button:hover {
-    background: #ff3385; 
-}
-
-
-.auth-container p {
-    margin-top: 10px;
-    color: #333; 
-}
-
-
-.auth-container span {
-    color: #ff66a3; 
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
-.auth-container span:hover {
-    color: #ff3385; 
-}
-
-
-.auth-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.5); 
-    border-radius: 10px;
-    z-index: -1; 
-}
-
-
-@media (max-width: 480px) {
-    .auth-container {
-        width: 90%; 
-        padding: 15px;
-    }
-
-    .auth-container h2 {
-        font-size: 1.5em;
-    }
-
-    .auth-container input,
-    .auth-container button {
-        font-size: 12px; 
-    }
-}*/
-
-
-body {
+.login-page * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
+.login-page {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
 
 .login-page {
     background-image: url('https://wallpapers.com/images/hd/women-background-n9t5k0r03kw0qze3.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .auth-container {
@@ -287,52 +30,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-}
-
-.auth-container h2 {
-    margin-bottom: 20px;
-    color: #ff66a3;
-}
-
-.auth-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    border: 1px solid #ff66a3;
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 16px;
-}
-
-.auth-container button {
-    width: 100%;
-    padding: 12px;
-    background: #ff66a3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.auth-container button:hover {
-    background: #ff3385;
-}
-
-.auth-container p {
-    margin-top: 10px;
-    color: #333;
-}
-
-.auth-container span {
-    color: #ff66a3;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.auth-container span:hover {
-    color: #ff3385;
+    z-index: 1;
 }
 
 .auth-container::before {
@@ -347,22 +45,66 @@ body {
     z-index: -1;
 }
 
+.auth-container h2 {
+    margin-bottom: 20px;
+    color: #ff66a3;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ff66a3;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff66a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-container button:hover {
+    background: #ff3385;
+}
+
+.auth-container p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+.auth-container span {
+    color: #ff66a3;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.auth-container span:hover {
+    color: #ff3385;
+}
+
 @media (max-width: 480px) {
     .auth-container {
-        width: 90%;
+        width: 100%;
         padding: 15px;
     }
 
     .auth-container h2 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     .auth-container input,
     .auth-container button {
-        font-size: 12px;
+        font-size: 14px;
+        padding: 10px;
     }
 }
-
-
-
-
