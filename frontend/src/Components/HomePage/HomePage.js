@@ -251,7 +251,6 @@ const HomePage = () => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % 3);
     }, 10000); // 10 seconds
-
     return () => clearInterval(interval);
   }, []);
 
@@ -271,7 +270,6 @@ const HomePage = () => {
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/products">Shopping</Link></li>
-          {/* <li><Link to="/cart">View Cart</Link></li> */}
           <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
         </ul>
       </nav>
@@ -284,9 +282,7 @@ const HomePage = () => {
         ].map((slide, index) => (
           <div key={index} className={`slide ${currentSlide === index ? "active" : ""}`}>
             <img src={slide.img} alt={`Slide ${index + 1}`} />
-            <div className={`text-overlay`}>
-              {/* You can restore text and desc if needed */}
-            </div>
+            <div className="text-overlay"></div>
           </div>
         ))}
       </section>
@@ -323,17 +319,29 @@ const HomePage = () => {
           Knowing your cycle helps you plan better, stay healthier, and understand your body’s natural rhythm.
         </p>
         <div className="tracker-benefits">
-          <div className="benefit-card">
+          <div
+            className="benefit-card"
+            onClick={() => navigate("/hormonal-imbalance")}
+            style={{ cursor: "pointer" }}
+          >
             <i className="fas fa-heartbeat benefit-icon"></i>
-            <h4>Better Health Monitoring</h4>
-            <p>Track symptoms and get insights into hormonal balance and fertility.</p>
+            <h4>Understanding Hormonal Imbalance</h4>
+            <p>Understanding PCOD/PCOS, its Symptoms and Menstrual Cycle</p>
           </div>
-          <div className="benefit-card">
+          <div
+            className="benefit-card"
+            onClick={() => navigate("/hormonal-imbalance")}
+            style={{ cursor: "pointer" }}
+          >
             <i className="fas fa-calendar-check benefit-icon"></i>
             <h4>Plan Your Schedule</h4>
             <p>Never be surprised by your periods again. Track and prepare ahead.</p>
           </div>
-          <div className="benefit-card">
+          <div
+            className="benefit-card"
+            onClick={() => navigate("/hormonal-imbalance")}
+            style={{ cursor: "pointer" }}
+          >
             <i className="fas fa-brain benefit-icon"></i>
             <h4>Understand Mood Swings</h4>
             <p>Correlate your mood and energy changes with your cycle phases.</p>
@@ -368,3 +376,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

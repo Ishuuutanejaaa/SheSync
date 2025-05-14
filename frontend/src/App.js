@@ -8,6 +8,7 @@ import CartPage from './Components/CartPage';
 import Tracker from './Components/Tracker';
 import AboutUs from './Components/AboutUs';
 import PrivateRoute from './Components/PrivateRoute';
+import HormonalImbalancePage from './Components/HormonalImbalancePage';
 
 const App = () => {
   return (
@@ -58,6 +59,8 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        <Route path="/hormonal-imbalance" element={<PrivateRoute><HormonalImbalancePage /></PrivateRoute>} />
+
       </Routes>
     </Router>
   );
