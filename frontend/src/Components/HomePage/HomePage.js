@@ -329,7 +329,7 @@ const HomePage = () => {
       
       <section className="vision-mission">
         <div className="vision">
-          <img src="/vision.jpeg" alt="Vision" className="vision-mission-img" />
+          <img src="/b2.jpg" alt="Vision" className="vision-mission-img" />
           <h2>Our Vision</h2>
           <p>
             To be the leading digital destination for women’s wellness, offering innovative, eco-friendly, and personalized solutions for menstrual health. SheSync envisions a world where every woman has access to reliable products, expert guidance, and a safe space to embrace her natural cycles with confidence and care.
@@ -337,10 +337,18 @@ const HomePage = () => {
         </div>
         <div className="divider"></div>
         <div className="mission">
-          <img src="/mission.jpg" alt="Mission" className="vision-mission-img" />
+          <img src="/target.avif" alt="Mission" className="vision-mission-img" />
           <h2>Our Mission</h2>
           <p>
-            SheSync is dedicated to empowering women by providing a seamless e-commerce platform for menstrual and reproductive health. We offer high-quality, sustainable, and science-backed products for period care, PCOS/PCOD management, and overall hormonal balance. Our mission is to promote self-care, break taboos, and create a supportive community for women’s health.
+            SheSync is dedicated to empowering women by providing a seamless e-commerce platform for menstrual and reproductive health. We offer high-quality, sustainable, and science-backed products for period care, PCOS/PCOD management, and overall hormonal balance. 
+          </p>
+        </div>
+        <div className="divider"></div>
+        <div className="mission">
+          <img src="/gem2.jpg" alt="Mission" className="vision-mission-img" />
+          <h2>Our Values</h2>
+          <p>
+            We believe that understanding hormonal health is key to personal empowerment. We are committed to providing accurate, easy-to-understand information that enables individuals to make informed decisions about their bodies.
           </p>
         </div>
       </section>
