@@ -237,7 +237,6 @@ export default HomePage;
 
 
 
-
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
@@ -257,82 +256,47 @@ const HomePage = () => {
   }, []);
 
   const handleLogout = () => {
-    console.log("User logged out");
-    navigate("/login");
+    localStorage.removeItem("token");
+    navigate("/"); // Redirect to login page
   };
 
   return (
     <div>
-     
       <nav className="navbar">
         <div className="logo-container">
           <img src="/Logo.png" alt="SheSync Logo" className="logo" />
           <span className="app-name">SheSync</span>
         </div>
         <ul>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/home">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/products">Shopping</Link></li>
           {/* <li><Link to="/cart">View Cart</Link></li> */}
-          <li><Link to="/login">Login</Link></li>
           <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
         </ul>
       </nav>
 
-    
       <section className="image-slider">
         {[
-          {
-            img: "/Slide1.gif",
-           /* alt: "Change the Psychle",
-            text: (
-              <>
-                Change the <span className="highlight">Psychle</span>
-              </>
-            ),
-            desc: "A social endeavour that shatters societal structures to uplift women.",
-            color: "pink"*/
-          },
-          {
-            img: "/giphy5.gif",
-           /* alt: "Shattering Myths",
-            text: (
-              <>
-                Shattering <span className="highlight">Myths</span>
-              </>
-            ),
-            desc: "Redefining menstrual hygiene through awareness and education.",
-            color: "purple"*/
-          },
-          {
-            img: "/emp.webp",
-           /* alt: "Enlightening Young Minds",
-            text: (
-              <>
-                <span className="highlight">Enlightening</span> Young Minds
-              </>
-            ),
-            desc: "Enabling awareness, embracing change, and encouraging sustainability.",
-            color: "grey"*/
-          }
+          { img: "/Slide1.gif" },
+          { img: "/giphy5.gif" },
+          { img: "/emp.webp" },
         ].map((slide, index) => (
           <div key={index} className={`slide ${currentSlide === index ? "active" : ""}`}>
-            <img src={slide.img} alt={slide.alt} />
-            <div className={`text-overlay ${slide.color}`}>
-              <h2>{slide.text}</h2>
-              <p>{slide.desc}</p>
+            <img src={slide.img} alt={`Slide ${index + 1}`} />
+            <div className={`text-overlay`}>
+              {/* You can restore text and desc if needed */}
             </div>
           </div>
         ))}
       </section>
 
-      
       <section className="vision-mission">
         <div className="vision">
           <img src="/b2.jpg" alt="Vision" className="vision-mission-img" />
           <h2>Our Vision</h2>
           <p>
-            To be the leading digital destination for women’s wellness, offering innovative, eco-friendly, and personalized solutions for menstrual health. SheSync envisions a world where every woman has access to reliable products, expert guidance, and a safe space to embrace her natural cycles with confidence and care.
+            To be the leading digital destination for women’s wellness, offering innovative, eco-friendly, and personalized solutions for menstrual health...
           </p>
         </div>
         <div className="divider"></div>
@@ -340,19 +304,18 @@ const HomePage = () => {
           <img src="/target.avif" alt="Mission" className="vision-mission-img" />
           <h2>Our Mission</h2>
           <p>
-            SheSync is dedicated to empowering women by providing a seamless e-commerce platform for menstrual and reproductive health. We offer high-quality, sustainable, and science-backed products for period care, PCOS/PCOD management, and overall hormonal balance. 
+            SheSync is dedicated to empowering women by providing a seamless e-commerce platform for menstrual and reproductive health...
           </p>
         </div>
         <div className="divider"></div>
         <div className="mission">
-          <img src="/gem2.jpg" alt="Mission" className="vision-mission-img" />
+          <img src="/gem2.jpg" alt="Values" className="vision-mission-img" />
           <h2>Our Values</h2>
           <p>
-            We believe that understanding hormonal health is key to personal empowerment. We are committed to providing accurate, easy-to-understand information that enables individuals to make informed decisions about their bodies.
+            We believe that understanding hormonal health is key to personal empowerment...
           </p>
         </div>
       </section>
-
 
       <section className="tracker-section">
         <h2 className="tracker-heading">Let’s Track Our Period</h2>
@@ -381,8 +344,6 @@ const HomePage = () => {
         </button>
       </section>
 
-
-   
       <section className="contact">
         <h2>Contact Us</h2>
         <form>
@@ -393,7 +354,6 @@ const HomePage = () => {
         </form>
       </section>
 
-      
       <footer className="footer">
         <p>© 2025 SHESYNC | All Rights Reserved</p>
         <div className="social-icons">
@@ -408,5 +368,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
