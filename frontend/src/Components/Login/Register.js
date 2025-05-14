@@ -132,7 +132,7 @@ const Register = () => {
         try {
             const res = await axios.post("http://localhost:5001/api/auth/register", { name, email, password });
             alert(res.data.message);
-            navigate("/login");
+            navigate("/");
         } catch (err) {
             alert("Error registering user");
         }
