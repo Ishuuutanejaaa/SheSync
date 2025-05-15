@@ -10,6 +10,7 @@ import AboutUs from './Components/AboutUs';
 import PrivateRoute from './Components/PrivateRoute';
 import HormonalImbalancePage from './Components/HormonalImbalancePage';
 import UsageInstructions from './Components/UsageInstructions';
+import ComparisonTables from './Components/ComparisonTables';
 
 const App = () => {
   return (
@@ -62,6 +63,8 @@ const App = () => {
         />
         <Route path="/hormonal-imbalance" element={<PrivateRoute><HormonalImbalancePage /></PrivateRoute>} />
         <Route path="/usage" element={<PrivateRoute><UsageInstructions /></PrivateRoute>} />
+         <Route path="/comp" element={<PrivateRoute><ComparisonTables /></PrivateRoute>} />
+        
 
       </Routes>
     </Router>

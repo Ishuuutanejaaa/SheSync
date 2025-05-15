@@ -339,12 +339,12 @@ const HomePage = () => {
           </div>
           <div
             className="benefit-card"
-            onClick={() => navigate("/hormonal-imbalance")}
+            onClick={() => navigate("/comp")}
             style={{ cursor: "pointer" }}
           >
             <i className="fas fa-brain benefit-icon"></i>
-            <h4>Understand Mood Swings</h4>
-            <p>Correlate your mood and energy changes with your cycle phases.</p>
+            <h4>Explore Menstrual Products</h4>
+            <p>Navigate menstrual products with real stories choose what suits your body and comfort.</p>
           </div>
         </div>
         <button className="tracker-button" onClick={() => navigate("/tracker")}>
