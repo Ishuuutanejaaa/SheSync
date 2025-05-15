@@ -243,8 +243,14 @@ import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import "./HomePage.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+
+
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitStatus, setSubmitStatus] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -257,6 +263,33 @@ const HomePage = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/"); // Redirect to login page
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("http://localhost:5001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        const data = await response.json();
+        setSubmitStatus(data.error || "Failed to send message.");
+      }
+    } catch (error) {
+      setSubmitStatus("An error occurred. Please try again later.");
+    }
   };
 
   return (
@@ -354,12 +387,30 @@ const HomePage = () => {
 
       <section className="contact">
         <h2>Contact Us</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Your Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
           <button type="submit">Send</button>
         </form>
+        {submitStatus && <p className="submit-status">{submitStatus}</p>}
       </section>
 
       <footer className="footer">
