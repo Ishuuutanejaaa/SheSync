@@ -11,6 +11,8 @@ import PrivateRoute from './Components/PrivateRoute';
 import HormonalImbalancePage from './Components/HormonalImbalancePage';
 import UsageInstructions from './Components/UsageInstructions';
 import ComparisonTables from './Components/ComparisonTables';
+import Success from './Components/Success';
+import Cancel from './Components/Cancel';
 
 const App = () => {
   return (
@@ -64,7 +66,8 @@ const App = () => {
         <Route path="/hormonal-imbalance" element={<PrivateRoute><HormonalImbalancePage /></PrivateRoute>} />
         <Route path="/usage" element={<PrivateRoute><UsageInstructions /></PrivateRoute>} />
          <Route path="/comp" element={<PrivateRoute><ComparisonTables /></PrivateRoute>} />
-        
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
 
       </Routes>
     </Router>
@@ -74,3 +77,6 @@ const App = () => {
 export default App;
 
 
+
+// hello
+// hello hii
