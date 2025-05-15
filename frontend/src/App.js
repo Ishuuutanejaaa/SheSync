@@ -9,6 +9,7 @@ import Tracker from './Components/Tracker';
 import AboutUs from './Components/AboutUs';
 import PrivateRoute from './Components/PrivateRoute';
 import HormonalImbalancePage from './Components/HormonalImbalancePage';
+import UsageInstructions from './Components/UsageInstructions';
 
 const App = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
           }
         />
         <Route path="/hormonal-imbalance" element={<PrivateRoute><HormonalImbalancePage /></PrivateRoute>} />
+        <Route path="/usage" element={<PrivateRoute><UsageInstructions /></PrivateRoute>} />
 
       </Routes>
     </Router>

@@ -330,12 +330,12 @@ const HomePage = () => {
           </div>
           <div
             className="benefit-card"
-            onClick={() => navigate("/hormonal-imbalance")}
+            onClick={() => navigate("/usage")}
             style={{ cursor: "pointer" }}
           >
             <i className="fas fa-calendar-check benefit-icon"></i>
-            <h4>Plan Your Schedule</h4>
-            <p>Never be surprised by your periods again. Track and prepare ahead.</p>
+            <h4>Menstrual Product Usage</h4>
+            <p>Step by Step guide how to use Tampons, Cups and Pads.</p>
           </div>
           <div
             className="benefit-card"
