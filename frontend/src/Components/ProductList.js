@@ -169,6 +169,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProductList.css";
+// add at the top
+import Checkout from "./Checkout"; 
+
 
 function debounce(func, wait) {
   let timeout;
@@ -428,7 +431,7 @@ const ProductList = () => {
             </div>
 
             <button onClick={() => addToCart(product)}>Add to Cart</button>
-            <button onClick={() => buyNow(product)}>Buy Now</button>
+            <Checkout cartItems={[{ ...product, quantity: quantities[product.id] || 1 }]} />
           </div>
         );
       })}
@@ -439,3 +442,8 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+
+
+// hello
+// hello hii
