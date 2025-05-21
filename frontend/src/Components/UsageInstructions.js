@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './usage_ins.css';
 
 const translations = {
@@ -32,6 +33,11 @@ const UsageInstructions = () => {
   const [checkedSteps, setCheckedSteps] = useState({});
   const [showModal, setShowModal] = useState(false);
 
+  const handleLogout = () => {
+    // Implement logout logic (e.g., clear tokens, redirect, etc.)
+    alert("Logged out successfully!");
+  };
+
   const handleCheckboxChange = (index) => {
     const updated = { ...checkedSteps };
     const key = `${section}-${index}`;
@@ -53,6 +59,20 @@ const UsageInstructions = () => {
 
   return (
     <div>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo-container">
+          <img src="/Logo.png" alt="SheSync Logo" className="logo" />
+          <span className="app-name">SheSync</span>
+        </div>
+        <ul>
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/products">Shopping</Link></li>
+          <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
+        </ul>
+      </nav>
+
       <div className="language-selector">
         <label htmlFor="language">Language:</label>
         <select id="language" value={language} onChange={(e) => setLanguage(e.target.value)}>
@@ -77,7 +97,6 @@ const UsageInstructions = () => {
       <main>
         <h2>{`How to Use ${section.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}`}</h2>
 
-        {/* Display product image */}
         {section === 'tampons' && (
           <img src="tampon-removebg-preview-removebg-preview.png" alt="Tampon" className="product-image" />
         )}
@@ -120,4 +139,3 @@ const UsageInstructions = () => {
 };
 
 export default UsageInstructions;
-

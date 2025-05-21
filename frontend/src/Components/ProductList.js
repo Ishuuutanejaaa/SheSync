@@ -167,11 +167,10 @@
 
 
 import React, { useEffect, useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./ProductList.css";
-// add at the top
-import Checkout from "./Checkout"; 
-
+// Ensure navbar styles are included
+import Checkout from "./Checkout";
 
 function debounce(func, wait) {
   let timeout;
@@ -193,6 +192,11 @@ const ProductList = () => {
   const [sortOption, setSortOption] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // or whatever token/session you're using
+    navigate("/login");
+  };
 
   const fetchProducts = (sort, search) => {
     let url = "http://localhost:5001/api/products";
@@ -301,8 +305,22 @@ const ProductList = () => {
   const getTotalCartCount = () =>
     Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
 
-  /*return (
-    <div>
+  return (
+    <>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo-container">
+          <img src="/Logo.png" alt="SheSync Logo" className="logo" />
+          <span className="app-name">SheSync</span>
+        </div>
+        <ul className="nav-links">
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/products">Shopping</Link></li>
+          <li><button className="logout-button" onClick={handleLogout}>Logout</button></li>
+        </ul>
+      </nav>
+
       <div className="header">
         <h2>All Products</h2>
         <button className="cart-button" onClick={() => navigate("/cart")}>
@@ -310,31 +328,31 @@ const ProductList = () => {
         </button>
       </div>
 
-      <div className="sort-container" style={{ marginBottom: "1rem" }}>
-        <label htmlFor="sort-select" style={{ marginRight: "0.5rem" }}>
-          Sort by:
-        </label>
-        <select
-          id="sort-select"
-          value={sortOption}
-          onChange={(e) => setSortOption(e.target.value)}
-        >
-          <option value="">-- Select sort option --</option>
-          <option value="price_asc">Price: Low to High</option>
-          <option value="price_desc">Price: High to Low</option>
-          <option value="name_asc">Alphabetically: A to Z</option>
-          <option value="name_desc">Alphabetically: Z to A</option>
-        </select>
-      </div>
+      <div className="filter-bar">
+        <div className="sort-container">
+          <label htmlFor="sort-select">Sort by:</label>
+          <select
+            id="sort-select"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="">-- Select sort option --</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="name_asc">Alphabetically: A to Z</option>
+            <option value="name_desc">Alphabetically: Z to A</option>
+          </select>
+        </div>
 
-      <div className="search-container" style={{ marginBottom: "1rem" }}>
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-        />
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+        </div>
       </div>
 
       <div className="product-container">
@@ -351,9 +369,7 @@ const ProductList = () => {
               />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <p>
-                <strong>Price:</strong> ${product.price}
-              </p>
+              <p><strong>Price:</strong> ${product.price}</p>
 
               <div>
                 <button onClick={() => updateQuantity(product.id, -1)}>-</button>
@@ -362,83 +378,13 @@ const ProductList = () => {
               </div>
 
               <button onClick={() => addToCart(product)}>Add to Cart</button>
-              <button onClick={() => buyNow(product)}>Buy Now</button>
+              <Checkout cartItems={[{ ...product, quantity: quantities[product.id] || 1 }]} />
             </div>
           );
         })}
-       
       </div>
-    </div>
-  );*/
-  return (
-  <div>
-    <div className="header">
-      <h2>All Products</h2>
-      <button className="cart-button" onClick={() => navigate("/cart")}>
-        🛒 Cart ({getTotalCartCount()})
-      </button>
-    </div>
-
-    <div className="filter-bar">
-      <div className="sort-container">
-        <label htmlFor="sort-select">Sort by:</label>
-        <select
-          id="sort-select"
-          value={sortOption}
-          onChange={(e) => setSortOption(e.target.value)}
-        >
-          <option value="">-- Select sort option --</option>
-          <option value="price_asc">Price: Low to High</option>
-          <option value="price_desc">Price: High to Low</option>
-          <option value="name_asc">Alphabetically: A to Z</option>
-          <option value="name_desc">Alphabetically: Z to A</option>
-        </select>
-      </div>
-
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="search-input"
-        />
-      </div>
-    </div>
-
-    <div className="product-container">
-      {products.map((product) => {
-        const images = product.images || [product.image];
-        const currentImage = images[imageIndexes[product.id] || 0];
-
-        return (
-          <div key={product.id} className="product-card">
-            <img
-              src={currentImage}
-              alt={product.name}
-              style={{ width: "200px", height: "200px", objectFit: "cover" }}
-            />
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              <strong>Price:</strong> ${product.price}
-            </p>
-
-            <div>
-              <button onClick={() => updateQuantity(product.id, -1)}>-</button>
-              <span>{quantities[product.id] || 1}</span>
-              <button onClick={() => updateQuantity(product.id, 1)}>+</button>
-            </div>
-
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-            <Checkout cartItems={[{ ...product, quantity: quantities[product.id] || 1 }]} />
-          </div>
-        );
-      })}
-    </div>
-  </div>
-);
-
+    </>
+  );
 };
 
 export default ProductList;
